@@ -1,0 +1,8 @@
+{
+  "name": "engineering-harness",
+  "version": "0.1.0",
+  "description": "Defect-derived engineering skills (test evidence, EF/Postgres, auth, .NET, React, security review) and a secrets guard hook.",
+  "author": {
+    "name": "1babii1"
+  }
+}

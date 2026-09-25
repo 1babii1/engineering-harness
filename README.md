@@ -61,6 +61,18 @@ Then wire the hooks into `.claude/settings.json`:
 }
 ```
 
+## Use as a plugin and run the evals
+
+The repo is also a Claude Code plugin (`.claude-plugin/plugin.json`, skills, `hooks/hooks.json`):
+
+```bash
+claude --plugin-dir /path/to/engineering-harness     # try it in a session
+claude plugin eval . --scaffold --trust-plugin --allow-tools Bash Write Edit --model haiku --no-publish
+```
+
+`evals/` holds five behavioural cases; `evals/RESULTS.md` records what they measured and what they
+do not.
+
 ## Conventions
 
 - A skill earns a line only from a verified failure (an incident, a test that caught a defect, a

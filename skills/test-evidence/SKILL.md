@@ -1,6 +1,6 @@
 ---
 name: test-evidence
-description: Prove a test is real evidence, not theater - seed past the boundary a check should catch, break the fix and watch the test go red, distinguish a broken suite from a flaky one. Use alongside `tdd` after writing a test, and always before counting a regression test as Definition of Done.
+description: Use whenever you fix a bug, add a regression test, or are about to say a fix works. Write the test first, run it and watch it fail against the unfixed code, then fix and watch it pass; seed past the boundary the check should catch; tell a broken suite from a flaky one. Complements `tdd` (the loop) by proving the test can fail.
 ---
 
 # Test evidence
@@ -17,6 +17,15 @@ loop is green.
 - Avoid mocks for simple value objects or pure code.
 - Do not mock the system under test.
 - Keep tests deterministic and independent.
+
+## Order for a bug fix
+
+1. Write the regression test **before touching the source**.
+2. Run it. It must fail, and for the reason the bug report names. A test that passes here is wrong.
+3. Only now change the source.
+4. Run it again and watch it pass, then run the wider suite.
+
+Editing the source first and running tests afterwards cannot show that the test guards the fix.
 
 ## Prove the test can fail
 
